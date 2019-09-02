@@ -15,7 +15,13 @@ class MovieListVC: UIViewController {
     
     var currentPage = 1
     var totalPages : Int!
+    var currentSearchPage = 1
+    var totalSearchPages : Int!
+    
     var movieList = [Movie]()
+    var searchList = [Movie]()
+
+    var isSearchOn = false
 
     let movieListVM = MovieListVM()
     
@@ -117,6 +123,88 @@ extension PopularTableView : UITableViewDelegate, UITableViewDataSource {
             currentPage += 1
             getMovieList()
         }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        searchBar.resignFirstResponder()
+    }
+}
+
+private typealias PopularSearchBar = MovieListVC
+
+extension PopularSearchBar : UISearchBarDelegate {
+    
+    func getSearchResults() {
+        if let text = searchBar.text?.lowercased(), !text.isEmpty {
+            currentSearchPage = 1
+            searchList.removeAll()
+            searchMoviesWithQuery(text)
+            isSearchOn = true
+        } else {
+            isSearchOn = false
+        }
+        
+        DispatchQueue.main.async {
+            self.movieTV.reloadData()
+        }
+        
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        if let text = searchBar.text, text.isEmpty {
+            isSearchOn = false
+            DispatchQueue.main.async {
+                self.movieTV.reloadData()
+            }
+        }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            getSearchResults()
+            searchBar.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+    func searchMoviesWithQuery(_ query : String) {
+        if currentSearchPage == 1 {
+            if let loader = self.view.viewWithTag(AppConstant.loaderTag) {
+                (loader as! AppLoader).showLoaderWithMessage("Getting Search Results...")
+            } else {
+                let loader = AppLoader(frame: self.view.bounds)
+                self.view.addSubview(loader)
+                loader.showLoaderWithMessage("Getting Search Results...")
+            }
+        }
+        movieListVM.searchMovie(page : currentSearchPage, query: query, completion: { (success, movies, page, totalPages) in
+            DispatchQueue.main.async {
+                if self.refreshControl.isRefreshing {
+                    self.refreshControl.endRefreshing()
+                }
+            }
+            if success {
+                if let page = page, let totalPages = totalPages, let movies = movies {
+                    self.currentSearchPage = page
+                    self.totalSearchPages = totalPages
+                    if self.currentSearchPage == 1 {
+                        self.searchList = movies
+                    } else {
+                        self.searchList.append(contentsOf: movies)
+                    }
+                    DispatchQueue.main.async {
+                        self.movieTV.reloadData()
+                    }
+                    AppLoader.hideLoaderIn(self.view)
+                } else {
+                    AppLoader.showErrorIn(view: self.view, withMessage: "No Results based on your query")
+                }
+            } else {
+                AppLoader.showErrorIn(view: self.view, withMessage: "Something went wrong. Please try again later")
+            }
+        })
     }
 }
 
