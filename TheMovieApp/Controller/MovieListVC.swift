@@ -18,9 +18,16 @@ class MovieListVC: UIViewController {
     var movieList = [Movie]()
 
     let movieListVM = MovieListVM()
+    
+    let refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: UIControl.Event.valueChanged)
+        movieTV.addSubview(refreshControl)
+        
         getMovieList()
 
         // Do any additional setup after loading the view.
@@ -33,10 +40,15 @@ class MovieListVC: UIViewController {
             } else {
                 let loader = AppLoader(frame: self.view.bounds)
                 self.view.addSubview(loader)
-                loader.showLoaderWithMessage("Loading Popular Contacts...")
+                loader.showLoaderWithMessage("Loading Popular Movies...")
             }
         }
         movieListVM.getPopularMovies(page : currentPage, completion: { (success, movies, page, totalPages) in
+            DispatchQueue.main.async {
+                if self.refreshControl.isRefreshing {
+                    self.refreshControl.endRefreshing()
+                }
+            }
             if success {
                 if let page = page, let totalPages = totalPages, let movies = movies, !movies.isEmpty {
                     AppLoader.hideLoaderIn(self.view)
@@ -57,6 +69,12 @@ class MovieListVC: UIViewController {
                 AppLoader.showErrorIn(view: self.view, withMessage: "Something went wrong. Please try again later")
             }
         })
+    }
+    
+    // MARK: - Helper Methods -
+    @objc func refresh(_ sender : AnyObject) {
+        currentPage = 1
+        getMovieList()
     }
 }
 
