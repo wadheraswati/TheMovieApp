@@ -41,6 +41,12 @@ struct Genre : Codable {
     let name : String
 }
 
+enum ImageSize : Int {
+    case Small = 200
+    case Medium = 500
+    case Large = 800
+}
+
 extension Array where Element == Language {
     
     func getCommaSeparatedValues() -> String {

@@ -16,6 +16,6 @@ struct APIList: Codable {
     static let getMovieDetail = "https://api.themoviedb.org/3/movie/%d"
     static let getMovieCast = "https://api.themoviedb.org/3/movie/%d/credits"
     
-    static let imageBaseUrl = "https://image.tmdb.org/t/p/w200%@"
+    static let imageBaseUrl = "https://image.tmdb.org/t/p/w%d%@"
     
 }

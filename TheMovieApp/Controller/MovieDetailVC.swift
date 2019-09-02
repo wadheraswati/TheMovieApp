@@ -134,7 +134,7 @@ class MovieDetailVC: UIViewController {
             self.setAttributes(toLabel: self.synopsisLbl, forKey: "About", andText: text)
             
             if let backdrop =  self.movieDetail.backdrop_path {
-                let imageUrl = String(format: APIList.imageBaseUrl, backdrop)
+                let imageUrl = String(format: APIList.imageBaseUrl, ImageSize.Medium.rawValue, backdrop)
                 self.posterImgV.loadImageUsingCache(withUrl : imageUrl)
             }
         }

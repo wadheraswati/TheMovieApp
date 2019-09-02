@@ -120,7 +120,7 @@ extension PopularTableView : UITableViewDelegate, UITableViewDataSource {
         }
         
         if let posterImgPath = movie.poster_path {
-            let imageUrl = String(format: APIList.imageBaseUrl, posterImgPath)
+            let imageUrl = String(format: APIList.imageBaseUrl, ImageSize.Small.rawValue, posterImgPath)
             cell.movieImgView.loadImageUsingCache(withUrl : imageUrl)
         } else {
             cell.movieImgView.image = nil
