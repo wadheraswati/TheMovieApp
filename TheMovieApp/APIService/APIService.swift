@@ -33,12 +33,25 @@ class APIService : NSObject {
         return sharedManager
     }
     
+    private let apikey = "f66bf8df432e32edb3a4f31972f7569b"
+
     public typealias completionHandler = ( Result <Any, AppError> ) -> Void
 
+    func appendApiKeyToUrl(_ url : String) -> String {
+        var urlString = url
+        if urlString.contains("?") {
+            urlString.append("&api_key=\(apikey)")
+        } else {
+            urlString.append("?api_key=\(apikey)")
+        }
+        return urlString
+    }
+    
     func GETAPI(url : String, completion : @escaping completionHandler)
     {
+        let formattedUrl = self.appendApiKeyToUrl(url).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         
-        guard let apiUrl = url, let urlString = URL(string : apiUrl) else {
+        guard let apiUrl = formattedUrl, let urlString = URL(string : apiUrl) else {
             print("Bad URL")
             completion(.failure(.badURL))
             return
