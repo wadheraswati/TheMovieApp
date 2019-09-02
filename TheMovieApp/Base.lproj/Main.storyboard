@@ -100,7 +100,7 @@
                     <connections>
                         <outlet property="movieTV" destination="VSR-MK-JO0" id="Oyi-ko-wnl"/>
                         <outlet property="searchBar" destination="jXO-My-Etj" id="2WG-5x-lJ6"/>
-                        <segue destination="y9q-OD-HME" kind="show" id="Tq6-jK-UkR"/>
+                        <segue destination="y9q-OD-HME" kind="show" identifier="movieDetailSegue" id="Tq6-jK-UkR"/>
                     </connections>
                 </viewController>
             </objects>
@@ -271,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1l-vf-tJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="316" y="23"/>
+            <point key="canvasLocation" x="349" y="23"/>
         </scene>
     </scenes>
 </document>

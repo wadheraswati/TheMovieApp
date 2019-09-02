@@ -83,7 +83,6 @@ extension Array where Element == MovieCast {
         
         var value = ""
         
-        let castList = self.prefix(5)
         for cast in castList {
             if !value.isEmpty {
                 value = value + "\n\(cast.character)(\(cast.name))"

@@ -24,6 +24,7 @@ class MovieDetailVC: UIViewController {
 
     var movieId : Int!
     let movieDetailVM = MovieDetailVM()
+    var movieDetail : MovieDetail!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -141,7 +142,7 @@ class MovieDetailVC: UIViewController {
     
     func setAttributes(toLabel label : UILabel, forKey key: String, andText text: String) {
         let attr = NSMutableAttributedString(string : text)
-        attr.addAttributes([NSAttributedStringKey.font : UIFont.systemFont(ofSize: 15), NSAttributedStringKey.foregroundColor : UIColor.black], range: NSRange(location: 0, length: attr.length))
+        attr.addAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15), NSAttributedString.Key.foregroundColor : UIColor.black], range: NSRange(location: 0, length: attr.length))
         attr.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: 15), range: attr.mutableString.range(of: key))
         label.attributedText = attr
     }
