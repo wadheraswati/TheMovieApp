@@ -23,11 +23,36 @@ class MovieDetailVC: UIViewController {
     @IBOutlet weak var scrollView : UIScrollView!
 
     var movieId : Int!
+    let movieDetailVM = MovieDetailVM()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if movieId != nil {
+            getMovieDetail()
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    func getMovieDetail() {
+        
+        let loader = AppLoader(frame: self.view.bounds)
+        self.view.addSubview(loader)
+        loader.showLoaderWithMessage("Loading Movie Details...")
+        
+        movieDetailVM.getMovieDetail(id: movieId, completion: { (success, movieDetail) in
+            if success, let detail = movieDetail {
+                self.movieDetail = detail
+                self.setupUI()
+                AppLoader.hideLoaderIn(self.view)
+            } else {
+                AppLoader.showErrorIn(view: self.view, withMessage: "Something went wrong. Please try again later")
+            }
+        })
+        
+        movieDetailVM.getMovieCast(id: movieId, completion: { (success, movieCast) in
+            self.setUpCastLbl(withCast: movieCast)
+        })
     }
     
 
