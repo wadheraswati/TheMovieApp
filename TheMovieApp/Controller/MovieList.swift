@@ -13,8 +13,13 @@ class MovieList: UIViewController {
     @IBOutlet weak var movieTV : UITableView!
     @IBOutlet weak var searchBar : UISearchBar!
     
+    var currentPage = 1
+    var totalPages : Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //getMovieList()
+
         // Do any additional setup after loading the view.
     }
 
