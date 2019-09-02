@@ -26,7 +26,29 @@ class MovieListUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
+    func testUI() {
+        
+        let app = XCUIApplication()
+        let tablesQuery = app.tables
+        
+        let cell = tablesQuery.cells.element(boundBy: 0)
+        let _ = cell.waitForExistence(timeout: 3)
+        
+        if tablesQuery.cells.count > 0 {
+            cell.tap()
+            let _ = app.staticTexts["movietitle"].waitForExistence(timeout: 3)
+            XCTAssertTrue(app.staticTexts["movietitle"].exists)
+            XCTAssertTrue(app.staticTexts["runningtime"].exists)
+            XCTAssertTrue(app.staticTexts["releasedate"].exists)
+            XCTAssertTrue(app.staticTexts["language"].exists)
+            XCTAssertTrue(app.staticTexts["genre"].exists)
+            XCTAssertTrue(app.staticTexts["rating"].exists)
+            XCTAssertTrue(app.staticTexts["synopsis"].exists)
+            XCTAssertTrue(app.staticTexts["cast"].exists)
+            
+        }
+        
+        
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
