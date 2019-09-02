@@ -32,5 +32,46 @@ class APIService : NSObject {
     @objc open class func shared() -> APIService {
         return sharedManager
     }
+    
+    public typealias completionHandler = ( Result <Any, AppError> ) -> Void
 
+    func GETAPI(url : String, completion : @escaping completionHandler)
+    {
+        
+        guard let apiUrl = url, let urlString = URL(string : apiUrl) else {
+            print("Bad URL")
+            completion(.failure(.badURL))
+            return
+        }
+        
+        print("GET API Called - \(apiUrl)")
+        
+        var request = URLRequest(url: urlString)
+        request.httpMethod = RequestType.GET.rawValue
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+            
+            do {
+                if error == nil {
+                    let json = try JSONSerialization.jsonObject(with: data!)
+                    print("GET API - \(url) Response")
+                    completion(.success(json))
+                } else {
+                    print("GET API - \(url) Error - \(error?.localizedDescription ?? "")")
+                    completion(.failure(.badURL))
+                }
+            } catch {
+                print("error")
+                completion(.failure(.badURL))
+            }
+        })
+        
+        task.resume()
+    }
+}
+
+enum AppError: Error {
+    case badURL
 }
