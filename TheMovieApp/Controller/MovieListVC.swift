@@ -27,6 +27,15 @@ class MovieListVC: UIViewController {
     }
     
     func getMovieList() {
+        if currentPage == 1 {
+            if let loader = self.view.viewWithTag(AppConstant.loaderTag) {
+                (loader as! AppLoader).showLoaderWithMessage("Loading Popular Movies...")
+            } else {
+                let loader = AppLoader(frame: self.view.bounds)
+                self.view.addSubview(loader)
+                loader.showLoaderWithMessage("Loading Popular Contacts...")
+            }
+        }
         movieListVM.getPopularMovies(page : currentPage, completion: { (success, movies, page, totalPages) in
             if success {
                 if let page = page, let totalPages = totalPages, let movies = movies, !movies.isEmpty {
@@ -41,7 +50,11 @@ class MovieListVC: UIViewController {
                     DispatchQueue.main.async {
                         self.movieTV.reloadData()
                     }
+                } else {
+                    AppLoader.showErrorIn(view: self.view, withMessage: "No Popular Movies Found")
                 }
+            } else {
+                AppLoader.showErrorIn(view: self.view, withMessage: "Something went wrong. Please try again later")
             }
         })
     }
