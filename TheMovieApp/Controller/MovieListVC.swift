@@ -122,7 +122,12 @@ extension PopularTableView : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == movieList.count - 5 && currentPage < totalPages {
+        if isSearchOn && indexPath.row == searchList.count - 5 && currentSearchPage < totalSearchPages {
+            if let text = searchBar.text?.lowercased(), !text.isEmpty {
+                currentSearchPage += 1
+                searchMoviesWithQuery(text)
+            }
+        } else if indexPath.row == movieList.count - 5 && currentPage < totalPages {
             currentPage += 1
             getMovieList()
         }
