@@ -11,7 +11,8 @@ import UIKit
 struct APIList: Codable {
     
     static let getPopularMovies = "https://api.themoviedb.org/3/movie/popular?page=%d"
-    
+    static let searchMovie = "https://api.themoviedb.org/3/search/movie?query=%@&page=%d"
+
     static let imageBaseUrl = "https://image.tmdb.org/t/p/w200%@"
     
 }
