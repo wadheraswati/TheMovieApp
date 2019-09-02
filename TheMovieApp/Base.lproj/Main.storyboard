@@ -78,6 +78,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="pbs-xv-1Cy"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="SyF-6g-flV"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -90,6 +94,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Movies" id="RZe-UU-MPO"/>
+                    <connections>
+                        <outlet property="movieTV" destination="VSR-MK-JO0" id="Oyi-ko-wnl"/>
+                        <outlet property="searchBar" destination="jXO-My-Etj" id="2WG-5x-lJ6"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-426.08695652173918" y="22.767857142857142"/>

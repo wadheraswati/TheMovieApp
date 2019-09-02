@@ -10,6 +10,9 @@ import UIKit
 
 class MovieList: UIViewController {
 
+    @IBOutlet weak var movieTV : UITableView!
+    @IBOutlet weak var searchBar : UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
