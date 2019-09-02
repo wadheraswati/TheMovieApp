@@ -13,6 +13,8 @@
 		D998FA6C231D3C5000E24281 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D998FA6B231D3C5000E24281 /* Assets.xcassets */; };
 		D998FA6F231D3C5000E24281 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D998FA6D231D3C5000E24281 /* LaunchScreen.storyboard */; };
 		D998FA7D231D82AD00E24281 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998FA7C231D82AD00E24281 /* MovieTableViewCell.swift */; };
+		D998FA80231D833500E24281 /* APIList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998FA7F231D833500E24281 /* APIList.swift */; };
+		D998FA82231D834000E24281 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998FA81231D834000E24281 /* APIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		D998FA6E231D3C5000E24281 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D998FA70231D3C5000E24281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D998FA7C231D82AD00E24281 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		D998FA7F231D833500E24281 /* APIList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIList.swift; sourceTree = "<group>"; };
+		D998FA81231D834000E24281 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		D998FA63231D3C4F00E24281 /* TheMovieApp */ = {
 			isa = PBXGroup;
 			children = (
+				D998FA7E231D831B00E24281 /* APIService */,
 				D998FA7B231D825600E24281 /* Model */,
 				D998FA7A231D824C00E24281 /* ViewModel */,
 				D998FA79231D824500E24281 /* View */,
@@ -97,6 +102,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D998FA7E231D831B00E24281 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				D998FA7F231D833500E24281 /* APIList.swift */,
+				D998FA81231D834000E24281 /* APIService.swift */,
+			);
+			path = APIService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,7 +185,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D998FA67231D3C4F00E24281 /* MovieList.swift in Sources */,
+				D998FA82231D834000E24281 /* APIService.swift in Sources */,
 				D998FA65231D3C4F00E24281 /* AppDelegate.swift in Sources */,
+				D998FA80231D833500E24281 /* APIList.swift in Sources */,
 				D998FA7D231D82AD00E24281 /* MovieTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
