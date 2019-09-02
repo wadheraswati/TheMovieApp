@@ -147,6 +147,12 @@ class MovieDetailVC: UIViewController {
         label.attributedText = attr
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.scrollView.contentSize = CGSize(width: self.scrollView.bounds.size.width, height: self.castLbl.frame.origin.y + self.castLbl.frame.size.height)
+        
+    }
+    
 
     /*
     // MARK: - Navigation
