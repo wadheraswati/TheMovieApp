@@ -58,7 +58,34 @@ class MovieListVC: UIViewController {
             }
         })
     }
-
-
 }
+
+private let cellIdentifier =  "movieCell"
+private typealias PopularTableView = MovieListVC
+extension PopularTableView : UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return movieList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MovieTableViewCell
+        
+        let movie = movieList[indexPath.row]
+        
+        cell.titleLbl.text = movie.title
+        if movie.vote_average > 0 {
+            cell.ratingLbl.text = "★ \(movie.vote_average)"
+        } else {
+            cell.ratingLbl.text = "No Rating Available"
+        }
+        
+        return cell
+    }
+}
+
 

@@ -20,7 +20,7 @@ class AppLoader: UIView {
         super.init(frame: frame)
         
         loaderView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-        loaderView.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        loaderView.style = .gray
         loaderView.center = CGPoint(x: frame.size.width/2, y: frame.size.height/2)
         self.addSubview(loaderView)
         
