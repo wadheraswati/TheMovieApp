@@ -80,6 +80,9 @@ class MovieListVC: UIViewController {
     // MARK: - Helper Methods -
     @objc func refresh(_ sender : AnyObject) {
         currentPage = 1
+        currentSearchPage = 1
+        searchBar.text = ""
+        isSearchOn = false
         getMovieList()
     }
 }
@@ -93,14 +96,14 @@ extension PopularTableView : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movieList.count
+        return isSearchOn ? searchList.count : movieList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MovieTableViewCell
         
-        let movie = movieList[indexPath.row]
-        
+        let movie = isSearchOn ? searchList[indexPath.row] : movieList[indexPath.row]
+
         cell.titleLbl.text = movie.title
         if movie.vote_average > 0 {
             cell.ratingLbl.text = "★ \(movie.vote_average)"
