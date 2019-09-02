@@ -102,7 +102,21 @@ extension PopularTableView : UITableViewDelegate, UITableViewDataSource {
             cell.ratingLbl.text = "No Rating Available"
         }
         
+        if let posterImgPath = movie.poster_path {
+            let imageUrl = String(format: APIList.imageBaseUrl, posterImgPath)
+            cell.movieImgView.loadImageUsingCache(withUrl : imageUrl)
+        } else {
+            cell.movieImgView.image = nil
+        }
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == movieList.count - 5 && currentPage < totalPages {
+            currentPage += 1
+            getMovieList()
+        }
     }
 }
 
