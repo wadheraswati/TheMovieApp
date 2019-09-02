@@ -22,6 +22,7 @@ class MovieListVC: UIViewController {
     var searchList = [Movie]()
 
     var isSearchOn = false
+    var selectedRow : Int!
 
     let movieListVM = MovieListVM()
     
@@ -85,6 +86,13 @@ class MovieListVC: UIViewController {
         isSearchOn = false
         getMovieList()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "movieDetailSegue" {
+            let vc = segue.destination as! MovieDetailVC
+            vc.movieId = isSearchOn ? searchList[selectedRow].id : movieList[selectedRow].id
+        }
+    }
 }
 
 private let cellIdentifier =  "movieCell"
@@ -131,6 +139,13 @@ extension PopularTableView : UITableViewDelegate, UITableViewDataSource {
             currentPage += 1
             getMovieList()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        searchBar.resignFirstResponder()
+        selectedRow = indexPath.row
+        performSegue(withIdentifier: "movieDetailSegue", sender: nil)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
