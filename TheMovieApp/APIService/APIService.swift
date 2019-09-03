@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Reachability
 
 public enum RequestType : String {
     case GET = "GET"
@@ -25,13 +26,14 @@ class APIService : NSObject {
     
     private static var sharedManager: APIService = {
         let serviceManager = APIService()
-        
         return serviceManager
     }()
     
     @objc open class func shared() -> APIService {
         return sharedManager
     }
+    
+    let reachability = Reachability()!
     
     private let apikey = "f66bf8df432e32edb3a4f31972f7569b"
 

@@ -7,19 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07A3413CC2D8E661AB58992F9E54F6B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		1329AA2732F224036F5942020803F99F /* Pods-TheMovieApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC822CDC368259B5A1C135FC49002AD /* Pods-TheMovieApp-dummy.m */; };
-		1C31BE6D6FEE0EAA2B5593E23F0F90F2 /* Cacher.h in Headers */ = {isa = PBXBuildFile; fileRef = 082FD836D3D21A91CBC884922A357FC7 /* Cacher.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		28B386C203D59176802801E3728E4A9B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E09D063D446A3296EBB273DEF3E332F /* Icon.png */; };
-		2FA31C17719397EF19B8CD30E475FFC6 /* Cacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697AB84638E9B5E3FA30B069A3690D11 /* Cacher.swift */; };
-		34F12C38ED1BFE17A096C6822A0EDF5D /* Cachable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D983007476F498E814B19C629478BF4 /* Cachable-dummy.m */; };
-		73254D83ABE4FC369436FEE9FEC163B2 /* Pods-TheMovieApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6015B418D87F46F58756CED3F69B163A /* Pods-TheMovieApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CAB3B8BDD1BC4F457A9ED7ACAFB932F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		F71581060E907875A154AF5D5F50DC81 /* Cachable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A4285DE80E2726DF6F4362813211FDB0 /* Cachable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07A3413CC2D8E661AB58992F9E54F6B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D711FBA503A6418C1F1C8082286D5985 /* Foundation.framework */; };
+		09944176280C980EB49784DBCA380462 /* ReachabilitySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4363AED5B3EDFEDD566BC2A09B38A3C1 /* ReachabilitySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C31BE6D6FEE0EAA2B5593E23F0F90F2 /* Cacher.h in Headers */ = {isa = PBXBuildFile; fileRef = F0FF3D6CE46532638F13C878930D2F83 /* Cacher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		28B386C203D59176802801E3728E4A9B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1AEC03D08AD33387E79E5123FBA17C /* Icon.png */; };
+		2FA31C17719397EF19B8CD30E475FFC6 /* Cacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A334F55CF3A26416D22EF10F950DEA2 /* Cacher.swift */; };
+		33CF97469D3F267E887B8320493B195A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D711FBA503A6418C1F1C8082286D5985 /* Foundation.framework */; };
+		34F12C38ED1BFE17A096C6822A0EDF5D /* Cachable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3BB6D8EAB890F48D197DF33A4A659A /* Cachable-dummy.m */; };
+		830289BD2505F1568B73CD440B22A65D /* Pods-TheMovieApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC822CDC368259B5A1C135FC49002AD /* Pods-TheMovieApp-dummy.m */; };
+		89A589D04411197399D7FCF7159AAE0A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EE968254130456936592FAD883A845 /* CoreTelephony.framework */; };
+		AA613EFF264044F93CFB60330E7DE226 /* Pods-TheMovieApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6015B418D87F46F58756CED3F69B163A /* Pods-TheMovieApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC96F44279E61358242F26840D4853F0 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F22A13FF73B9DF4F8DAEAA9FFC1FAE /* Reachability.swift */; };
+		E3851C05BB04CC91221792429E21EFC4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D711FBA503A6418C1F1C8082286D5985 /* Foundation.framework */; };
+		E5938189529B1F8BD074BB166C8BDE57 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F64256263F0F1E673BCBD67DF6958420 /* SystemConfiguration.framework */; };
+		E5F6ACACDF29D937A21E7DEC85A13E3E /* ReachabilitySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FF724A85505743BECE5684C44AFE85 /* ReachabilitySwift-dummy.m */; };
+		F71581060E907875A154AF5D5F50DC81 /* Cachable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1561E23E2C298512DCB02D3A3EF47632 /* Cachable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4D63C4267C3D684ECFCFDDAD872CAB30 /* PBXContainerItemProxy */ = {
+		07702E6D639C45CF37981BD224BB069C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B00B2C167CD783351BD1D00BD5AD1F8;
+			remoteInfo = ReachabilitySwift;
+		};
+		F8BD109DDF221231781264E18ABC3742 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -29,39 +42,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		082FD836D3D21A91CBC884922A357FC7 /* Cacher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Cacher.h; path = Cacher/Cacher.h; sourceTree = "<group>"; };
-		0D86078F212EB29C8A96FD6CFC0E3AAE /* Cachable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cachable.xcconfig; sourceTree = "<group>"; };
 		0EF4FA4242F08AFDD69A6E575A81A1AF /* Pods-TheMovieApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TheMovieApp-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1D983007476F498E814B19C629478BF4 /* Cachable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cachable-dummy.m"; sourceTree = "<group>"; };
+		1239BF6315E0A52F392229815A60C7CE /* Cachable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cachable-prefix.pch"; sourceTree = "<group>"; };
+		1561E23E2C298512DCB02D3A3EF47632 /* Cachable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cachable-umbrella.h"; sourceTree = "<group>"; };
+		19FF724A85505743BECE5684C44AFE85 /* ReachabilitySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReachabilitySwift-dummy.m"; sourceTree = "<group>"; };
+		1A334F55CF3A26416D22EF10F950DEA2 /* Cacher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cacher.swift; path = Cacher/Cacher.swift; sourceTree = "<group>"; };
+		21B03CA622E690725A6626C088E1D09F /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Reachability.framework; path = ReachabilitySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC822CDC368259B5A1C135FC49002AD /* Pods-TheMovieApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TheMovieApp-dummy.m"; sourceTree = "<group>"; };
-		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		35C1EF13CCEE2C51537F0780A00C967E /* Pods_TheMovieApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TheMovieApp.framework; path = "Pods-TheMovieApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E09D063D446A3296EBB273DEF3E332F /* Icon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = "<group>"; };
-		450D30F8F139B7D93EA5CDC9ADE291B7 /* Cachable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Cachable.modulemap; sourceTree = "<group>"; };
+		4363AED5B3EDFEDD566BC2A09B38A3C1 /* ReachabilitySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-umbrella.h"; sourceTree = "<group>"; };
+		48F22A13FF73B9DF4F8DAEAA9FFC1FAE /* Reachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Sources/Reachability.swift; sourceTree = "<group>"; };
 		4C2FF0388FB2134CABB8FD7D8BACA7A0 /* Cachable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cachable.framework; path = Cachable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		514FB400B090BF6720A86CF18DE05484 /* Cachable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cachable-prefix.pch"; sourceTree = "<group>"; };
+		5B2D79782D499B2A650E3B4C3C61D107 /* ReachabilitySwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReachabilitySwift.xcconfig; sourceTree = "<group>"; };
+		5FB94B6072C1C6BC5B8515BAEE227BAD /* ReachabilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-prefix.pch"; sourceTree = "<group>"; };
 		6015B418D87F46F58756CED3F69B163A /* Pods-TheMovieApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TheMovieApp-umbrella.h"; sourceTree = "<group>"; };
-		697AB84638E9B5E3FA30B069A3690D11 /* Cacher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cacher.swift; path = Cacher/Cacher.swift; sourceTree = "<group>"; };
 		698807E046E7A2FA08F34D62DFB4BDA8 /* Pods-TheMovieApp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TheMovieApp-Info.plist"; sourceTree = "<group>"; };
 		6B7D01408C257B0FE325BEB840DD4F3E /* Pods-TheMovieApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TheMovieApp-frameworks.sh"; sourceTree = "<group>"; };
+		6E1AEC03D08AD33387E79E5123FBA17C /* Icon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = "<group>"; };
+		6F3BB6D8EAB890F48D197DF33A4A659A /* Cachable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cachable-dummy.m"; sourceTree = "<group>"; };
+		7350D2E9938AAB070DA5C4C849F1C661 /* Cachable-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Cachable-Info.plist"; sourceTree = "<group>"; };
 		8BF4D52264DE15DE9F3A2CCCB5C9D86A /* Pods-TheMovieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TheMovieApp.debug.xcconfig"; sourceTree = "<group>"; };
+		97768EA0B9E7869A5CD69F5C95B7998E /* Cachable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cachable.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A4285DE80E2726DF6F4362813211FDB0 /* Cachable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cachable-umbrella.h"; sourceTree = "<group>"; };
-		C5273A96B126E601148AD5EDB4849028 /* Cachable-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Cachable-Info.plist"; sourceTree = "<group>"; };
+		C7DB09F589559F625ACD5F1CB9F0E671 /* ReachabilitySwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ReachabilitySwift-Info.plist"; sourceTree = "<group>"; };
+		D711FBA503A6418C1F1C8082286D5985 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D850D8DC11FB373D6BA4B8F37E7ABC70 /* Cachable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Cachable.modulemap; sourceTree = "<group>"; };
 		E15986082CCF2BEA0156763D25850934 /* Pods-TheMovieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TheMovieApp.release.xcconfig"; sourceTree = "<group>"; };
 		E7624D32B3C69A1B857BE4B4F671435A /* Pods-TheMovieApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TheMovieApp.modulemap"; sourceTree = "<group>"; };
+		F0FF3D6CE46532638F13C878930D2F83 /* Cacher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Cacher.h; path = Cacher/Cacher.h; sourceTree = "<group>"; };
+		F64256263F0F1E673BCBD67DF6958420 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		F6EE968254130456936592FAD883A845 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
 		F762CC822D77903B91926895E62F5937 /* Pods-TheMovieApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TheMovieApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		F7EA840AE0C2DCE35B93D242BFC00340 /* ReachabilitySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ReachabilitySwift.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4F85913461AA9F160C54644BB7BDF776 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CAB3B8BDD1BC4F457A9ED7ACAFB932F9 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6ACA7AD47D4D8AA5B2E68E213155F50D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -70,27 +85,77 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		92A37A51219ED31062DE51A3E139BF37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89A589D04411197399D7FCF7159AAE0A /* CoreTelephony.framework in Frameworks */,
+				33CF97469D3F267E887B8320493B195A /* Foundation.framework in Frameworks */,
+				E5938189529B1F8BD074BB166C8BDE57 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB8E39AD9BEE4981EA27D8E9BE6F30ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3851C05BB04CC91221792429E21EFC4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		10DA770C38B730B4BBE33D546BF1B247 /* Resources */ = {
+		03C5C200A0787E300053CFA8F53CA094 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3E09D063D446A3296EBB273DEF3E332F /* Icon.png */,
+				65C892BC3ADB577FE47BB0D4B61FE2E0 /* iOS */,
 			);
-			name = Resources;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		203B508C4AE9F715ADB91C509E5052A0 /* Cachable */ = {
+		0576ECCD9A92CEC7DA5E583A8EEDA1D7 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				082FD836D3D21A91CBC884922A357FC7 /* Cacher.h */,
-				697AB84638E9B5E3FA30B069A3690D11 /* Cacher.swift */,
-				10DA770C38B730B4BBE33D546BF1B247 /* Resources */,
-				FAA8636AA730D863875B9A7752D5770A /* Support Files */,
+				F7EA840AE0C2DCE35B93D242BFC00340 /* ReachabilitySwift.modulemap */,
+				5B2D79782D499B2A650E3B4C3C61D107 /* ReachabilitySwift.xcconfig */,
+				19FF724A85505743BECE5684C44AFE85 /* ReachabilitySwift-dummy.m */,
+				C7DB09F589559F625ACD5F1CB9F0E671 /* ReachabilitySwift-Info.plist */,
+				5FB94B6072C1C6BC5B8515BAEE227BAD /* ReachabilitySwift-prefix.pch */,
+				4363AED5B3EDFEDD566BC2A09B38A3C1 /* ReachabilitySwift-umbrella.h */,
 			);
-			name = Cachable;
-			path = Cachable;
+			name = "Support Files";
+			path = "../Target Support Files/ReachabilitySwift";
+			sourceTree = "<group>";
+		};
+		3B4BEDA6C2AEFBE33B91E5139B81057A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C2FF0388FB2134CABB8FD7D8BACA7A0 /* Cachable.framework */,
+				35C1EF13CCEE2C51537F0780A00C967E /* Pods_TheMovieApp.framework */,
+				21B03CA622E690725A6626C088E1D09F /* Reachability.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65C892BC3ADB577FE47BB0D4B61FE2E0 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F6EE968254130456936592FAD883A845 /* CoreTelephony.framework */,
+				D711FBA503A6418C1F1C8082286D5985 /* Foundation.framework */,
+				F64256263F0F1E673BCBD67DF6958420 /* SystemConfiguration.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		74ACAE5040668EBDDCEDE86F19540CB3 /* ReachabilitySwift */ = {
+			isa = PBXGroup;
+			children = (
+				48F22A13FF73B9DF4F8DAEAA9FFC1FAE /* Reachability.swift */,
+				0576ECCD9A92CEC7DA5E583A8EEDA1D7 /* Support Files */,
+			);
+			name = ReachabilitySwift;
+			path = ReachabilitySwift;
 			sourceTree = "<group>";
 		};
 		758CA65D391215D4EFD03DF4D5344A84 /* Pods-TheMovieApp */ = {
@@ -110,23 +175,6 @@
 			path = "Target Support Files/Pods-TheMovieApp";
 			sourceTree = "<group>";
 		};
-		80413709D16A598CEBD678873A4CC221 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4C2FF0388FB2134CABB8FD7D8BACA7A0 /* Cachable.framework */,
-				35C1EF13CCEE2C51537F0780A00C967E /* Pods_TheMovieApp.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		83C2F7A4A02E3B7E78140C7216772BB4 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				203B508C4AE9F715ADB91C509E5052A0 /* Cachable */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		A18A92CAAEF125DEB6641042D2E43EC1 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,50 +183,71 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+		CBCFD95A3C49B9C4C6968E24C6064E05 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+				6E1AEC03D08AD33387E79E5123FBA17C /* Icon.png */,
 			);
-			name = iOS;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				83C2F7A4A02E3B7E78140C7216772BB4 /* Pods */,
-				80413709D16A598CEBD678873A4CC221 /* Products */,
+				03C5C200A0787E300053CFA8F53CA094 /* Frameworks */,
+				F3D78738FF222ED328E63573E87EB81D /* Pods */,
+				3B4BEDA6C2AEFBE33B91E5139B81057A /* Products */,
 				A18A92CAAEF125DEB6641042D2E43EC1 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		DEB2E44442A8E54BBB143F0736BD1C02 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FAA8636AA730D863875B9A7752D5770A /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				450D30F8F139B7D93EA5CDC9ADE291B7 /* Cachable.modulemap */,
-				0D86078F212EB29C8A96FD6CFC0E3AAE /* Cachable.xcconfig */,
-				1D983007476F498E814B19C629478BF4 /* Cachable-dummy.m */,
-				C5273A96B126E601148AD5EDB4849028 /* Cachable-Info.plist */,
-				514FB400B090BF6720A86CF18DE05484 /* Cachable-prefix.pch */,
-				A4285DE80E2726DF6F4362813211FDB0 /* Cachable-umbrella.h */,
+				D850D8DC11FB373D6BA4B8F37E7ABC70 /* Cachable.modulemap */,
+				97768EA0B9E7869A5CD69F5C95B7998E /* Cachable.xcconfig */,
+				6F3BB6D8EAB890F48D197DF33A4A659A /* Cachable-dummy.m */,
+				7350D2E9938AAB070DA5C4C849F1C661 /* Cachable-Info.plist */,
+				1239BF6315E0A52F392229815A60C7CE /* Cachable-prefix.pch */,
+				1561E23E2C298512DCB02D3A3EF47632 /* Cachable-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Cachable";
 			sourceTree = "<group>";
 		};
+		E60B2309B29D2B06F207D760E28A1508 /* Cachable */ = {
+			isa = PBXGroup;
+			children = (
+				F0FF3D6CE46532638F13C878930D2F83 /* Cacher.h */,
+				1A334F55CF3A26416D22EF10F950DEA2 /* Cacher.swift */,
+				CBCFD95A3C49B9C4C6968E24C6064E05 /* Resources */,
+				DEB2E44442A8E54BBB143F0736BD1C02 /* Support Files */,
+			);
+			name = Cachable;
+			path = Cachable;
+			sourceTree = "<group>";
+		};
+		F3D78738FF222ED328E63573E87EB81D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E60B2309B29D2B06F207D760E28A1508 /* Cachable */,
+				74ACAE5040668EBDDCEDE86F19540CB3 /* ReachabilitySwift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		09F7B7D04C454C16C0015640CF269F7E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09944176280C980EB49784DBCA380462 /* ReachabilitySwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4A1B60DAA9182F41BFD1F77E92B8084 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -188,17 +257,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C98714D31C3B3FAAB2B43A48BFA3FC39 /* Headers */ = {
+		B7A2EA22AF8FA5B5BB77329B2463E6C1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73254D83ABE4FC369436FEE9FEC163B2 /* Pods-TheMovieApp-umbrella.h in Headers */,
+				AA613EFF264044F93CFB60330E7DE226 /* Pods-TheMovieApp-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0B00B2C167CD783351BD1D00BD5AD1F8 /* ReachabilitySwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E50A4613BA081C4F47DEEC1F9B9176BA /* Build configuration list for PBXNativeTarget "ReachabilitySwift" */;
+			buildPhases = (
+				09F7B7D04C454C16C0015640CF269F7E /* Headers */,
+				9C9FF78F6878BCE13B73B6BB5DD0A609 /* Sources */,
+				92A37A51219ED31062DE51A3E139BF37 /* Frameworks */,
+				1EA4E360633A1D5CC11F6E9C4EEC2475 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReachabilitySwift;
+			productName = ReachabilitySwift;
+			productReference = 21B03CA622E690725A6626C088E1D09F /* Reachability.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		0B781292CA208C58B102A85A69DD6080 /* Cachable */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C778DEF1A0A63D0963E8C5296A295DAD /* Build configuration list for PBXNativeTarget "Cachable" */;
@@ -219,17 +306,18 @@
 		};
 		11216EA8C4DF017C9B2E9E541BBE36E8 /* Pods-TheMovieApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A3EC8A1F5E1EE7C19A6B4377965C1BB1 /* Build configuration list for PBXNativeTarget "Pods-TheMovieApp" */;
+			buildConfigurationList = 304C68FFC74FC791D7A33BC5359978CD /* Build configuration list for PBXNativeTarget "Pods-TheMovieApp" */;
 			buildPhases = (
-				C98714D31C3B3FAAB2B43A48BFA3FC39 /* Headers */,
-				B14BB454A5C01CAAFCC3399F69440D2D /* Sources */,
-				4F85913461AA9F160C54644BB7BDF776 /* Frameworks */,
-				FEC55613FED48145D151A3CD77453FA3 /* Resources */,
+				B7A2EA22AF8FA5B5BB77329B2463E6C1 /* Headers */,
+				3E3E7C2EFB9A57FF3575659BE3BF8431 /* Sources */,
+				BB8E39AD9BEE4981EA27D8E9BE6F30ED /* Frameworks */,
+				D3086D57BBB0A341364A47E4537AC195 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C776A86B8AD6F5AA7DB6025584991C75 /* PBXTargetDependency */,
+				0F9247D00A74753026CD4CCCE00AF788 /* PBXTargetDependency */,
+				FFDC3D29C9D1D0E13A5CC084838CAEFF /* PBXTargetDependency */,
 			);
 			name = "Pods-TheMovieApp";
 			productName = "Pods-TheMovieApp";
@@ -253,17 +341,25 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 80413709D16A598CEBD678873A4CC221 /* Products */;
+			productRefGroup = 3B4BEDA6C2AEFBE33B91E5139B81057A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				0B781292CA208C58B102A85A69DD6080 /* Cachable */,
 				11216EA8C4DF017C9B2E9E541BBE36E8 /* Pods-TheMovieApp */,
+				0B00B2C167CD783351BD1D00BD5AD1F8 /* ReachabilitySwift */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1EA4E360633A1D5CC11F6E9C4EEC2475 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5F7FC7F6B96899F1E3C73C999744C7D6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -272,7 +368,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FEC55613FED48145D151A3CD77453FA3 /* Resources */ = {
+		D3086D57BBB0A341364A47E4537AC195 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -282,6 +378,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3E3E7C2EFB9A57FF3575659BE3BF8431 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				830289BD2505F1568B73CD440B22A65D /* Pods-TheMovieApp-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5587FC667E0924671971A0A18084B8FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -291,26 +395,72 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B14BB454A5C01CAAFCC3399F69440D2D /* Sources */ = {
+		9C9FF78F6878BCE13B73B6BB5DD0A609 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1329AA2732F224036F5942020803F99F /* Pods-TheMovieApp-dummy.m in Sources */,
+				AC96F44279E61358242F26840D4853F0 /* Reachability.swift in Sources */,
+				E5F6ACACDF29D937A21E7DEC85A13E3E /* ReachabilitySwift-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C776A86B8AD6F5AA7DB6025584991C75 /* PBXTargetDependency */ = {
+		0F9247D00A74753026CD4CCCE00AF788 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Cachable;
 			target = 0B781292CA208C58B102A85A69DD6080 /* Cachable */;
-			targetProxy = 4D63C4267C3D684ECFCFDDAD872CAB30 /* PBXContainerItemProxy */;
+			targetProxy = F8BD109DDF221231781264E18ABC3742 /* PBXContainerItemProxy */;
+		};
+		FFDC3D29C9D1D0E13A5CC084838CAEFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ReachabilitySwift;
+			target = 0B00B2C167CD783351BD1D00BD5AD1F8 /* ReachabilitySwift */;
+			targetProxy = 07702E6D639C45CF37981BD224BB069C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		16183F4565A3BF7D86718FCDA13A1DBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E15986082CCF2BEA0156763D25850934 /* Pods-TheMovieApp.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TheMovieApp/Pods-TheMovieApp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TheMovieApp/Pods-TheMovieApp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		204B8AEA4AE90A551A1768B355C2F9F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -377,7 +527,7 @@
 		};
 		37C1B26AC88F0E348F314C1DA2E61D75 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D86078F212EB29C8A96FD6CFC0E3AAE /* Cachable.xcconfig */;
+			baseConfigurationReference = 97768EA0B9E7869A5CD69F5C95B7998E /* Cachable.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -471,12 +621,10 @@
 			};
 			name = Release;
 		};
-		5FC5A46A8E4EC4992DAAD1F0A9C882A2 /* Release */ = {
+		8D9C5DF25380D913350BDCA225353A58 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E15986082CCF2BEA0156763D25850934 /* Pods-TheMovieApp.release.xcconfig */;
+			baseConfigurationReference = 5B2D79782D499B2A650E3B4C3C61D107 /* ReachabilitySwift.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -486,23 +634,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TheMovieApp/Pods-TheMovieApp-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TheMovieApp/Pods-TheMovieApp.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift.modulemap";
+				PRODUCT_MODULE_NAME = Reachability;
+				PRODUCT_NAME = Reachability;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -512,7 +659,7 @@
 		};
 		B69D324FCC893E5562B2911A9CE5B5F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D86078F212EB29C8A96FD6CFC0E3AAE /* Cachable.xcconfig */;
+			baseConfigurationReference = 97768EA0B9E7869A5CD69F5C95B7998E /* Cachable.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -545,7 +692,42 @@
 			};
 			name = Debug;
 		};
-		E3E618AAB5F64986D14EE36D0F1099B6 /* Debug */ = {
+		D4A7F9E3FE3B37118A6FCEBE7DA678CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B2D79782D499B2A650E3B4C3C61D107 /* ReachabilitySwift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift.modulemap";
+				PRODUCT_MODULE_NAME = Reachability;
+				PRODUCT_NAME = Reachability;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E3043704E4350EAB00E534F451721FD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8BF4D52264DE15DE9F3A2CCCB5C9D86A /* Pods-TheMovieApp.debug.xcconfig */;
 			buildSettings = {
@@ -586,6 +768,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		304C68FFC74FC791D7A33BC5359978CD /* Build configuration list for PBXNativeTarget "Pods-TheMovieApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3043704E4350EAB00E534F451721FD3 /* Debug */,
+				16183F4565A3BF7D86718FCDA13A1DBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -595,20 +786,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A3EC8A1F5E1EE7C19A6B4377965C1BB1 /* Build configuration list for PBXNativeTarget "Pods-TheMovieApp" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E3E618AAB5F64986D14EE36D0F1099B6 /* Debug */,
-				5FC5A46A8E4EC4992DAAD1F0A9C882A2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		C778DEF1A0A63D0963E8C5296A295DAD /* Build configuration list for PBXNativeTarget "Cachable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B69D324FCC893E5562B2911A9CE5B5F5 /* Debug */,
 				37C1B26AC88F0E348F314C1DA2E61D75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E50A4613BA081C4F47DEEC1F9B9176BA /* Build configuration list for PBXNativeTarget "ReachabilitySwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4A7F9E3FE3B37118A6FCEBE7DA678CF /* Debug */,
+				8D9C5DF25380D913350BDCA225353A58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

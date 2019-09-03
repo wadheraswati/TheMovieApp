@@ -7,5 +7,5 @@ target 'TheMovieApp' do
 
   # Pods for TheMovieApp
   pod "Cachable"
-
+  pod 'ReachabilitySwift'
 end
