@@ -36,6 +36,14 @@ struct CachableMovie : Codable, Cachable {
     let movies : [Movie]
 }
 
+struct CachableMovieDetail : Codable, Cachable {
+    var fileName : String {
+        return "movies-\(id)"
+    }
+    let id : Int
+    let detail : MovieDetail
+}
+
 struct MovieCast : Codable {
     let character : String
     let name : String

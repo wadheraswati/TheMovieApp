@@ -7,14 +7,24 @@
 //
 
 import UIKit
+import Cachable
 
 class MovieDetailVM: NSObject {
     
     let apiService = APIService.shared()
-    
+    let cacher: Cacher = Cacher(destination: .temporary)
+
     func getMovieDetail(id : Int, completion : @escaping (_ success : Bool, _ detail : MovieDetail?) -> ()) {
         
         let url = String(format: APIList.getMovieDetail, id)
+        if apiService.reachability.connection == .none {
+            if let movie : CachableMovieDetail = cacher.load(fileName: "movies-\(id)") {
+                completion(true, movie.detail)
+            } else {
+                completion(false, nil)
+            }
+            return
+        }
         
         apiService.GETAPI(url: url, completion: { result in
             switch(result) {
@@ -24,6 +34,7 @@ class MovieDetailVM: NSObject {
                         let movieData = try JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
                         let movieDetail = try JSONDecoder().decode(MovieDetail.self, from: movieData)
                         completion(true, movieDetail)
+                        self.writeToCache(movieDetail, id: id)
                     } catch {
                         print("Parsing error - \(error)")
                         completion(false, nil)
@@ -72,5 +83,16 @@ class MovieDetailVM: NSObject {
                 completion(false, nil)
             }
         })
+    }
+    
+    func writeToCache(_ detail : MovieDetail, id : Int) {
+        let cachableMovies = CachableMovieDetail(id: id, detail: detail)
+        self.cacher.persist(item: cachableMovies) { url, error in
+            if let error = error {
+                print("Movie detail failed to persist: \(error)")
+            } else {
+                print("Movie detail persisted in \(String(describing: url))")
+            }
+        }
     }
 }
