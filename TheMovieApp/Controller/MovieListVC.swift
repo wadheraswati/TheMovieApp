@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Cachable
 
 class MovieListVC: UIViewController {
 
@@ -27,6 +28,7 @@ class MovieListVC: UIViewController {
     let movieListVM = MovieListVM()
     
     let refreshControl = UIRefreshControl()
+    let cacher: Cacher = Cacher(destination: .temporary)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +68,7 @@ class MovieListVC: UIViewController {
                     } else {
                         self.movieList.append(contentsOf: movies)
                     }
+                    self.writeToCache()
                     DispatchQueue.main.async {
                         self.movieTV.reloadData()
                     }
@@ -76,6 +79,17 @@ class MovieListVC: UIViewController {
                 AppLoader.showErrorIn(view: self.view, withMessage: "Something went wrong. Please try again later")
             }
         })
+    }
+    
+    func writeToCache() {
+        let cachableMovies = CachableMovie(movies: self.movieList)
+        self.cacher.persist(item: cachableMovies) { url, error in
+            if let error = error {
+                print("Movies failed to persist: \(error)")
+            } else {
+                print("Movies persisted in \(String(describing: url))")
+            }
+        }
     }
     
     // MARK: - Helper Methods -

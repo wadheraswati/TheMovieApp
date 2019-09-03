@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Cachable
 
 struct Movie: Codable {
     let id : Int
@@ -26,6 +27,13 @@ struct MovieDetail : Codable {
     let vote_count : Int?
     let runtime : Int?
     let overview : String?
+}
+
+struct CachableMovie : Codable, Cachable {
+    var fileName : String {
+        return "movies"
+    }
+    let movies : [Movie]
 }
 
 struct MovieCast : Codable {
