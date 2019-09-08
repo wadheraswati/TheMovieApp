@@ -14,21 +14,12 @@ public enum RequestType: String {
 
 class APIService: NSObject {
     
-    private static var sharedManager: APIService = {
-        let serviceManager = APIService()
-        
-        return serviceManager
-    }()
-    
-    @objc open class func shared() -> APIService {
-        return sharedManager
-    }
-    
-    private let apikey = "f66bf8df432e32edb3a4f31972f7569b"
+    static let apikey = "f66bf8df432e32edb3a4f31972f7569b"
 
     public typealias CompletionHandler = ( Result <Any, AppError> ) -> Void
 
-    func appendApiKeyToUrl(_ url: String) -> String {
+    static func appendApiKeyToUrl(_ url: String) -> String {
+        
         var urlString = url
         if urlString.contains("?") {
             urlString.append("&api_key=\(apikey)")
@@ -38,7 +29,8 @@ class APIService: NSObject {
         return urlString
     }
     
-    func get(url: String, completion: @escaping CompletionHandler) {
+    static func get(url: String, completion: @escaping CompletionHandler) {
+        
         let formattedUrl = self.appendApiKeyToUrl(url).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         
         guard let apiUrl = formattedUrl, let urlString = URL(string: apiUrl) else {

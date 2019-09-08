@@ -11,7 +11,6 @@ import Cachable
 
 class MovieDetailVM: NSObject {
     
-    let apiService = APIService.shared()
     let cacher: Cacher = Cacher(destination: .temporary)
     
     func getMovieDetail(movieId: Int, completion: @escaping (_ success: Bool, _ detail: MovieDetail?, _ errorMsg: String?) -> Void) {
@@ -26,7 +25,7 @@ class MovieDetailVM: NSObject {
             return
         }
         
-        apiService.get(url: url, completion: { result in
+        APIService.get(url: url, completion: { result in
             switch result {
             case .success(let response):
                 if let dict = response as? NSDictionary {
@@ -54,7 +53,7 @@ class MovieDetailVM: NSObject {
         
         let url = String(format: APIList.getMovieCast, movieId)
         
-        apiService.get(url: url, completion: { result in
+        APIService.get(url: url, completion: { result in
             switch result {
             case .success(let response):
                 if let dict = response as? NSDictionary, let list = dict.value(forKey: "cast") as? NSArray {

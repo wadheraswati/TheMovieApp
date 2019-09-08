@@ -11,7 +11,6 @@ import Cachable
 
 class MovieListVM: NSObject {
 
-    let apiService = APIService.shared()
     let cacher: Cacher = Cacher(destination: .temporary)
 
     func getPopularMovies(page: Int, completion: @escaping (_ success: Bool, _ movieList: [Movie]?, _ currentPage: Int?, _ totalPages: Int?, _ errorMsg: String?) -> Void) {
@@ -27,7 +26,7 @@ class MovieListVM: NSObject {
             return
         }
         
-        apiService.get(url: url, completion: { result in
+        APIService.get(url: url, completion: { result in
             switch result {
             case .success(let response):
                 if let dict = response as? NSDictionary, let page = dict.value(forKey: "page") as? Int, let totalNumberOfPages = dict.value(forKey: "total_pages") as? Int, let movies = dict.value(forKey: "results") as? NSArray {
@@ -62,7 +61,7 @@ class MovieListVM: NSObject {
         
         let url = String(format: APIList.searchMovie, query, page)
         
-        apiService.get(url: url, completion: { result in
+        APIService.get(url: url, completion: { result in
             switch result {
             case .success(let response):
                 if let dict = response as? NSDictionary, let page = dict.value(forKey: "page") as? Int, let totalNumberOfPages = dict.value(forKey: "total_pages") as? Int, let movies = dict.value(forKey: "results") as? NSArray {
