@@ -14,12 +14,12 @@ class MovieListVM: NSObject {
     let apiService = APIService.shared()
     let cacher: Cacher = Cacher(destination: .temporary)
 
-    func getPopularMovies(page : Int, completion : @escaping (_ success : Bool, _ movieList : [Movie]?, _ currentPage : Int?, _ totalPages : Int?, _ errorMsg : String?) -> ()) {
+    func getPopularMovies(page: Int, completion: @escaping (_ success: Bool, _ movieList: [Movie]?, _ currentPage: Int?, _ totalPages: Int?, _ errorMsg: String?) -> Void) {
         
         let url = String(format: APIList.getPopularMovies, page)
         
         if !Connectivity.isConnectedToInternet {
-            if let list : CachableMovie = cacher.load(fileName: "movies") {
+            if let list: CachableMovie = cacher.load(fileName: "movies") {
                 completion(true, list.movies, 1, 1, nil)
             } else {
                 completion(false, nil, nil, nil, "You are not connected to internet. Please try again later")
@@ -27,7 +27,7 @@ class MovieListVM: NSObject {
             return
         }
         
-        apiService.GETAPI(url: url, completion: { result in
+        apiService.get(url: url, completion: { result in
             switch result {
             case .success(let response):
                 if let dict = response as? NSDictionary, let page = dict.value(forKey: "page") as? Int, let totalNumberOfPages = dict.value(forKey: "total_pages") as? Int, let movies = dict.value(forKey: "results") as? NSArray {
@@ -58,11 +58,11 @@ class MovieListVM: NSObject {
         
     }
     
-    func searchMovie(page : Int, query : String, completion : @escaping (_ success : Bool, _ movieList : [Movie]?, _ currentPage : Int?, _ totalPages : Int?) -> ()) {
+    func searchMovie(page: Int, query: String, completion: @escaping (_ success: Bool, _ movieList: [Movie]?, _ currentPage: Int?, _ totalPages: Int?) -> Void) {
         
         let url = String(format: APIList.searchMovie, query, page)
         
-        apiService.GETAPI(url: url, completion: { result in
+        apiService.get(url: url, completion: { result in
             switch result {
             case .success(let response):
                 if let dict = response as? NSDictionary, let page = dict.value(forKey: "page") as? Int, let totalNumberOfPages = dict.value(forKey: "total_pages") as? Int, let movies = dict.value(forKey: "results") as? NSArray {
@@ -89,7 +89,7 @@ class MovieListVM: NSObject {
         })
     }
     
-    func writeToCache(_ list : [Movie]) {
+    func writeToCache(_ list: [Movie]) {
         let cachableMovies = CachableMovie(movies: list)
         self.cacher.persist(item: cachableMovies) { url, error in
             if let error = error {

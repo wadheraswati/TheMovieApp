@@ -10,57 +10,57 @@ import UIKit
 import Cachable
 
 struct Movie: Codable {
-    let id : Int
-    let title : String
-    let vote_average : Float
-    let poster_path : String?
+    let id: Int
+    let title: String
+    let vote_average: Float
+    let poster_path: String?
 }
 
-struct MovieDetail : Codable {
-    let id : Int
-    let title : String
-    let vote_average : Float?
-    let backdrop_path : String?
-    let release_date : String?
-    let spoken_languages : [Language]?
-    let genres : [Genre]?
-    let vote_count : Int?
-    let runtime : Int?
-    let overview : String?
+struct MovieDetail: Codable {
+    let id: Int
+    let title: String
+    let vote_average: Float?
+    let backdrop_path: String?
+    let release_date: String?
+    let spoken_languages: [Language]?
+    let genres: [Genre]?
+    let vote_count: Int?
+    let runtime: Int?
+    let overview: String?
 }
 
-struct CachableMovie : Codable, Cachable {
-    var fileName : String {
+struct CachableMovie: Codable, Cachable {
+    var fileName: String {
         return "movies"
     }
-    let movies : [Movie]
+    let movies: [Movie]
 }
 
-struct CachableMovieDetail : Codable, Cachable {
-    var fileName : String {
+struct CachableMovieDetail: Codable, Cachable {
+    var fileName: String {
         return "movies-\(id)"
     }
-    let id : Int
-    let detail : MovieDetail
+    let id: Int
+    let detail: MovieDetail
 }
 
-struct MovieCast : Codable {
-    let character : String
-    let name : String
+struct MovieCast: Codable {
+    let character: String
+    let name: String
 }
 
-struct Language : Codable {
-    let name : String
+struct Language: Codable {
+    let name: String
 }
 
-struct Genre : Codable {
-    let name : String
+struct Genre: Codable {
+    let name: String
 }
 
-enum ImageSize : Int {
-    case Small = 200
-    case Medium = 500
-    case Large = 800
+enum ImageSize: Int {
+    case small = 200
+    case medium = 500
+    case large = 800
 }
 
 extension Array where Element == Language {
@@ -71,7 +71,7 @@ extension Array where Element == Language {
         
         for language in self {
             if !value.isEmpty {
-                value = value + ", \(language.name)"
+                value += ", \(language.name)"
             } else {
                 value = language.name
             }
@@ -89,7 +89,7 @@ extension Array where Element == Genre {
         
         for genre in self {
             if !value.isEmpty {
-                value = value + ", \(genre.name)"
+                value += ", \(genre.name)"
             } else {
                 value = genre.name
             }
@@ -107,7 +107,7 @@ extension Array where Element == MovieCast {
         
         for cast in self {
             if !value.isEmpty {
-                value = value + "\n\(cast.character)(\(cast.name))"
+                value += "\n\(cast.character)(\(cast.name))"
             } else {
                 value = "\(cast.character) (\(cast.name))"
             }

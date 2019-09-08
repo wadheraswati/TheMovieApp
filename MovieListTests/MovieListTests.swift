@@ -11,7 +11,7 @@ import XCTest
 
 class MovieListTests: XCTestCase {
     
-    var sut : MovieListVC!
+    var sut: MovieListVC!
     
     override func setUp() {
         
@@ -50,8 +50,7 @@ class MovieListTests: XCTestCase {
                 sut.movieTV.reloadData()
                 let index = Int.random(in: 0..<sut.movieList.count)
                 sut.movieTV.selectRow(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .none)
-            }
-            catch {
+            } catch {
                 print("error - \(error)")
             }
         }
@@ -88,7 +87,6 @@ class MovieListTests: XCTestCase {
         sut.currentPage = 2
         sut.getMovieList()
     }
-    
     
     func testSearch() {
         sut.searchBar.becomeFirstResponder()

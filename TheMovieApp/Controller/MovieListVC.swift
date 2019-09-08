@@ -11,19 +11,19 @@ import Cachable
 
 class MovieListVC: UIViewController {
 
-    @IBOutlet weak var movieTV : UITableView!
-    @IBOutlet weak var searchBar : UISearchBar!
+    @IBOutlet weak var movieTV: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var currentPage = 1
-    var totalPages : Int!
+    var totalPages: Int!
     var currentSearchPage = 1
-    var totalSearchPages : Int!
+    var totalSearchPages: Int!
     
     var movieList = [Movie]()
     var searchList = [Movie]()
 
     var isSearchOn = false
-    var selectedRow : Int!
+    var selectedRow: Int!
 
     let movieListVM = MovieListVM()
     
@@ -43,15 +43,15 @@ class MovieListVC: UIViewController {
     
     func getMovieList() {
         if currentPage == 1 {
-            if let loader = self.view.viewWithTag(AppConstant.loaderTag) {
-                (loader as! AppLoader).showLoaderWithMessage("Loading Popular Movies...")
+            if let loader = self.view.viewWithTag(AppConstant.loaderTag) as? AppLoader {
+                loader.showLoaderWithMessage("Loading Popular Movies...")
             } else {
                 let loader = AppLoader(frame: self.view.bounds)
                 self.view.addSubview(loader)
                 loader.showLoaderWithMessage("Loading Popular Movies...")
             }
         }
-        movieListVM.getPopularMovies(page : currentPage, completion: { (success, movies, page, totalPages, errorMsg) in
+        movieListVM.getPopularMovies(page: currentPage, completion: { (success, movies, page, totalPages, errorMsg) in
             DispatchQueue.main.async {
                 if self.refreshControl.isRefreshing {
                     self.refreshControl.endRefreshing()
@@ -80,7 +80,7 @@ class MovieListVC: UIViewController {
     }
     
     // MARK: - Helper Methods -
-    @objc func refresh(_ sender : AnyObject) {
+    @objc func refresh(_ sender: AnyObject) {
         currentPage = 1
         currentSearchPage = 1
         searchBar.text = ""
@@ -90,28 +90,30 @@ class MovieListVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "movieDetailSegue" {
-            let vc = segue.destination as! MovieDetailVC
-            vc.movieId = isSearchOn ? searchList[selectedRow].id : movieList[selectedRow].id
+            guard let viewController = segue.destination as? MovieDetailVC else {
+                return
+            }
+            viewController.movieId = isSearchOn ? searchList[selectedRow].id: movieList[selectedRow].id
         }
     }
 }
 
 private let cellIdentifier =  "movieCell"
 private typealias PopularTableView = MovieListVC
-extension PopularTableView : UITableViewDelegate, UITableViewDataSource {
+extension PopularTableView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return isSearchOn ? searchList.count : movieList.count
+        return isSearchOn ? searchList.count: movieList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MovieTableViewCell
         
-        let movie = isSearchOn ? searchList[indexPath.row] : movieList[indexPath.row]
+        let movie = isSearchOn ? searchList[indexPath.row]: movieList[indexPath.row]
 
         cell.titleLbl.text = movie.title
         if movie.vote_average > 0 {
@@ -121,8 +123,8 @@ extension PopularTableView : UITableViewDelegate, UITableViewDataSource {
         }
         
         if let posterImgPath = movie.poster_path {
-            let imageUrl = String(format: APIList.imageBaseUrl, ImageSize.Small.rawValue, posterImgPath)
-            cell.movieImgView.loadImageUsingCache(withUrl : imageUrl)
+            let imageUrl = String(format: APIList.imageBaseUrl, ImageSize.small.rawValue, posterImgPath)
+            cell.movieImgView.loadImageUsingCache(withUrl: imageUrl)
         } else {
             cell.movieImgView.image = nil
         }
@@ -156,7 +158,7 @@ extension PopularTableView : UITableViewDelegate, UITableViewDataSource {
 
 private typealias PopularSearchBar = MovieListVC
 
-extension PopularSearchBar : UISearchBarDelegate {
+extension PopularSearchBar: UISearchBarDelegate {
     
     func getSearchResults() {
         if let text = searchBar.text?.lowercased(), !text.isEmpty {
@@ -193,17 +195,17 @@ extension PopularSearchBar : UISearchBarDelegate {
         return true
     }
     
-    func searchMoviesWithQuery(_ query : String) {
+    func searchMoviesWithQuery(_ query: String) {
         if currentSearchPage == 1 {
-            if let loader = self.view.viewWithTag(AppConstant.loaderTag) {
-                (loader as! AppLoader).showLoaderWithMessage("Getting Search Results...")
+            if let loader = self.view.viewWithTag(AppConstant.loaderTag) as? AppLoader {
+                loader.showLoaderWithMessage("Getting Search Results...")
             } else {
                 let loader = AppLoader(frame: self.view.bounds)
                 self.view.addSubview(loader)
                 loader.showLoaderWithMessage("Getting Search Results...")
             }
         }
-        movieListVM.searchMovie(page : currentSearchPage, query: query, completion: { (success, movies, page, totalPages) in
+        movieListVM.searchMovie(page: currentSearchPage, query: query, completion: { (success, movies, page, totalPages) in
             DispatchQueue.main.async {
                 if self.refreshControl.isRefreshing {
                     self.refreshControl.endRefreshing()
@@ -231,5 +233,3 @@ extension PopularSearchBar : UISearchBarDelegate {
         })
     }
 }
-
-

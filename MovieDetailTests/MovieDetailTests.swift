@@ -6,13 +6,12 @@
 //  Copyright © 2019 Swati Wadhera. All rights reserved.
 //
 
-
 import XCTest
 @testable import TheMovieApp
 
 class MovieDetailTests: XCTestCase {
     
-    var sut : MovieDetailVC!
+    var sut: MovieDetailVC!
     
     override func setUp() {
         sut = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MovieDetailVCIdentifier") as? MovieDetailVC
@@ -67,6 +66,4 @@ class MovieDetailTests: XCTestCase {
         sut.setupUI()
         sut.setUpCastLbl(withCast: [MovieCast(character: "New", name: "Name")])
     }
-
-
 }

@@ -32,11 +32,11 @@ class MovieListUITests: XCTestCase {
         let tablesQuery = app.tables
         
         let cell = tablesQuery.cells.element(boundBy: 0)
-        let _ = cell.waitForExistence(timeout: 3)
+        _ = cell.waitForExistence(timeout: 3)
         
         if tablesQuery.cells.count > 0 {
             cell.tap()
-            let _ = app.staticTexts["movietitle"].waitForExistence(timeout: 3)
+            _ = app.staticTexts["movietitle"].waitForExistence(timeout: 3)
             XCTAssertTrue(app.staticTexts["movietitle"].exists)
             XCTAssertTrue(app.staticTexts["runningtime"].exists)
             XCTAssertTrue(app.staticTexts["releasedate"].exists)
@@ -47,8 +47,6 @@ class MovieListUITests: XCTestCase {
             XCTAssertTrue(app.staticTexts["cast"].exists)
             
         }
-        
-        
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

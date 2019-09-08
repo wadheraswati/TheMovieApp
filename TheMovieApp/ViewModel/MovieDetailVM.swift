@@ -14,11 +14,11 @@ class MovieDetailVM: NSObject {
     let apiService = APIService.shared()
     let cacher: Cacher = Cacher(destination: .temporary)
     
-    func getMovieDetail(id : Int, completion : @escaping (_ success : Bool, _ detail : MovieDetail?, _ errorMsg : String?) -> ()) {
+    func getMovieDetail(movieId: Int, completion: @escaping (_ success: Bool, _ detail: MovieDetail?, _ errorMsg: String?) -> Void) {
         
-        let url = String(format: APIList.getMovieDetail, id)
+        let url = String(format: APIList.getMovieDetail, movieId)
         if !Connectivity.isConnectedToInternet {
-            if let movie : CachableMovieDetail = cacher.load(fileName: "movies-\(id)") {
+            if let movie: CachableMovieDetail = cacher.load(fileName: "movies-\(movieId)") {
                 completion(true, movie.detail, nil)
             } else {
                 completion(false, nil, "You are not connected to internet. Please try again later")
@@ -26,15 +26,15 @@ class MovieDetailVM: NSObject {
             return
         }
         
-        apiService.GETAPI(url: url, completion: { result in
-            switch(result) {
+        apiService.get(url: url, completion: { result in
+            switch result {
             case .success(let response):
                 if let dict = response as? NSDictionary {
                     do {
                         let movieData = try JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
                         let movieDetail = try JSONDecoder().decode(MovieDetail.self, from: movieData)
                         completion(true, movieDetail, nil)
-                        self.writeToCache(movieDetail, id: id)
+                        self.writeToCache(movieDetail, movieId: movieId)
                     } catch {
                         print("Parsing error - \(error)")
                         completion(false, nil, nil)
@@ -50,12 +50,12 @@ class MovieDetailVM: NSObject {
         })
     }
     
-    func getMovieCast(id : Int, completion : @escaping (_ success : Bool, _ cast : [MovieCast]?) -> ()) {
+    func getMovieCast(movieId: Int, completion: @escaping (_ success: Bool, _ cast: [MovieCast]?) -> Void) {
         
-        let url = String(format: APIList.getMovieCast, id)
+        let url = String(format: APIList.getMovieCast, movieId)
         
-        apiService.GETAPI(url: url, completion: { result in
-            switch(result) {
+        apiService.get(url: url, completion: { result in
+            switch result {
             case .success(let response):
                 if let dict = response as? NSDictionary, let list = dict.value(forKey: "cast") as? NSArray {
                     do {
@@ -85,8 +85,8 @@ class MovieDetailVM: NSObject {
         })
     }
     
-    func writeToCache(_ detail : MovieDetail, id : Int) {
-        let cachableMovies = CachableMovieDetail(id: id, detail: detail)
+    func writeToCache(_ detail: MovieDetail, movieId: Int) {
+        let cachableMovies = CachableMovieDetail(id: movieId, detail: detail)
         self.cacher.persist(item: cachableMovies) { url, error in
             if let error = error {
                 print("Movie detail failed to persist: \(error)")

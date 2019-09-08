@@ -25,7 +25,7 @@ class AppLoader: UIView {
         self.addSubview(loaderView)
         
         loaderText.frame = CGRect(x: 20, y: loaderView.frame.origin.y + loaderView.frame.size.height + 10, width: frame.size.width - 40, height: 0)
-        loaderText.numberOfLines = 0;
+        loaderText.numberOfLines = 0
         loaderText.lineBreakMode = .byWordWrapping
         loaderText.textColor = UIColor.black
         loaderText.font = UIFont.boldSystemFont(ofSize: 15)
@@ -49,19 +49,19 @@ class AppLoader: UIView {
         loaderText.center = CGPoint(x: self.center.x, y: loaderText.center.y)
     }
     
-    class func hideLoaderIn(_ view : UIView) {
+    class func hideLoaderIn(_ view: UIView) {
         DispatchQueue.main.async {
             if let loader = view.viewWithTag(AppConstant.loaderTag) as? AppLoader {
                 UIView.animate(withDuration: 0.25, animations: {
                     loader.alpha = 0
-                }, completion: {(success) in
+                }, completion: { _ in
                     loader.removeFromSuperview()
                 })
             }
         }
     }
     
-    class func showErrorIn(view : UIView, withMessage message: String) {
+    class func showErrorIn(view: UIView, withMessage message: String) {
         DispatchQueue.main.async {
             
             if let loader = view.viewWithTag(AppConstant.loaderTag) as? AppLoader {
@@ -80,4 +80,3 @@ class AppLoader: UIView {
 struct AppConstant {
     static let loaderTag = 12345
 }
-

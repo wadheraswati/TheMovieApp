@@ -11,7 +11,7 @@ import UIKit
 let imageCache = NSCache<NSString, AnyObject>()
 
 extension UIImageView {
-    func loadImageUsingCache(withUrl urlString : String) {
+    func loadImageUsingCache(withUrl urlString: String) {
         
         self.image = nil
         
@@ -25,7 +25,7 @@ extension UIImageView {
             return
         }
         // if not, download image from url
-        URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+        URLSession.shared.dataTask(with: url, completionHandler: { (data, _, error) in
             if error != nil {
                 print(error!)
                 return

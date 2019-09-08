@@ -12,7 +12,7 @@ import Reachability
 class Connectivity {
     
     static let reachability = Reachability()!
-    static var isConnectedToInternet : Bool {
+    static var isConnectedToInternet: Bool {
         return self.reachability.connection != .none
     }
     
@@ -20,14 +20,16 @@ class Connectivity {
         NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
         do {
             try self.reachability.startNotifier()
-        }  catch{
+        } catch {
             print("could not start reachability notifier")
         }
     }
     
     @objc static func reachabilityChanged(note: Notification) {
         
-        let reachability = note.object as! Reachability
+        guard let reachability = note.object as? Reachability else {
+            return
+        }
         
         switch reachability.connection {
         case .wifi:

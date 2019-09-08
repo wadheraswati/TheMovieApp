@@ -8,11 +8,11 @@
 
 import UIKit
 
-public enum RequestType : String {
+public enum RequestType: String {
     case GET
 }
 
-class APIService : NSObject {
+class APIService: NSObject {
     
     private static var sharedManager: APIService = {
         let serviceManager = APIService()
@@ -20,17 +20,15 @@ class APIService : NSObject {
         return serviceManager
     }()
     
-    
-    
     @objc open class func shared() -> APIService {
         return sharedManager
     }
     
     private let apikey = "f66bf8df432e32edb3a4f31972f7569b"
 
-    public typealias completionHandler = ( Result <Any, AppError> ) -> Void
+    public typealias CompletionHandler = ( Result <Any, AppError> ) -> Void
 
-    func appendApiKeyToUrl(_ url : String) -> String {
+    func appendApiKeyToUrl(_ url: String) -> String {
         var urlString = url
         if urlString.contains("?") {
             urlString.append("&api_key=\(apikey)")
@@ -40,11 +38,10 @@ class APIService : NSObject {
         return urlString
     }
     
-    func GETAPI(url : String, completion : @escaping completionHandler)
-    {
+    func get(url: String, completion: @escaping CompletionHandler) {
         let formattedUrl = self.appendApiKeyToUrl(url).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         
-        guard let apiUrl = formattedUrl, let urlString = URL(string : apiUrl) else {
+        guard let apiUrl = formattedUrl, let urlString = URL(string: apiUrl) else {
             print("Bad URL")
             completion(.failure(.badURL))
             return
@@ -57,7 +54,7 @@ class APIService : NSObject {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let session = URLSession.shared
-        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+        let task = session.dataTask(with: request, completionHandler: { data, _, error -> Void in
             
             do {
                 if error == nil {
