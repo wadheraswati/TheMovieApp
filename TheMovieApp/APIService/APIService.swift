@@ -7,33 +7,24 @@
 //
 
 import UIKit
-import Reachability
 
 public enum RequestType : String {
-    case GET = "GET"
-    case POST = "POST"
-    case DELETE = "DELETE"
-    case PUT = "PUT"
-}
-
-public enum ResponseStatusCode : Int {
-    case Success = 200
-    case NoData = 204
-    case SessionExpired = 401
+    case GET
 }
 
 class APIService : NSObject {
     
     private static var sharedManager: APIService = {
         let serviceManager = APIService()
+        
         return serviceManager
     }()
+    
+    
     
     @objc open class func shared() -> APIService {
         return sharedManager
     }
-    
-    let reachability = Reachability()!
     
     private let apikey = "f66bf8df432e32edb3a4f31972f7569b"
 

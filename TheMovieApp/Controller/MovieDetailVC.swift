@@ -41,13 +41,13 @@ class MovieDetailVC: UIViewController {
         self.view.addSubview(loader)
         loader.showLoaderWithMessage("Loading Movie Details...")
         
-        movieDetailVM.getMovieDetail(id: movieId, completion: { (success, movieDetail) in
+        movieDetailVM.getMovieDetail(id: movieId, completion: { success, movieDetail, errorMsg in
             if success, let detail = movieDetail {
                 self.movieDetail = detail
                 self.setupUI()
                 AppLoader.hideLoaderIn(self.view)
             } else {
-                AppLoader.showErrorIn(view: self.view, withMessage: "Something went wrong. Please try again later")
+                AppLoader.showErrorIn(view: self.view, withMessage: errorMsg ?? "Something went wrong. Please try again later")
             }
         })
         

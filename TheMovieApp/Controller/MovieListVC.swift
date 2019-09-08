@@ -51,7 +51,7 @@ class MovieListVC: UIViewController {
                 loader.showLoaderWithMessage("Loading Popular Movies...")
             }
         }
-        movieListVM.getPopularMovies(page : currentPage, completion: { (success, movies, page, totalPages) in
+        movieListVM.getPopularMovies(page : currentPage, completion: { (success, movies, page, totalPages, errorMsg) in
             DispatchQueue.main.async {
                 if self.refreshControl.isRefreshing {
                     self.refreshControl.endRefreshing()
@@ -74,7 +74,7 @@ class MovieListVC: UIViewController {
                     AppLoader.showErrorIn(view: self.view, withMessage: "No Popular Movies Found")
                 }
             } else {
-                AppLoader.showErrorIn(view: self.view, withMessage: "Something went wrong. Please try again later")
+                AppLoader.showErrorIn(view: self.view, withMessage: errorMsg ?? "Something went wrong. Please try again later")
             }
         })
     }

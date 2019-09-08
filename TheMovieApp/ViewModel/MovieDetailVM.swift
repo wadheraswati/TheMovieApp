@@ -13,15 +13,15 @@ class MovieDetailVM: NSObject {
     
     let apiService = APIService.shared()
     let cacher: Cacher = Cacher(destination: .temporary)
-
-    func getMovieDetail(id : Int, completion : @escaping (_ success : Bool, _ detail : MovieDetail?) -> ()) {
+    
+    func getMovieDetail(id : Int, completion : @escaping (_ success : Bool, _ detail : MovieDetail?, _ errorMsg : String?) -> ()) {
         
         let url = String(format: APIList.getMovieDetail, id)
-        if apiService.reachability.connection == .none {
+        if !Connectivity.isConnectedToInternet {
             if let movie : CachableMovieDetail = cacher.load(fileName: "movies-\(id)") {
-                completion(true, movie.detail)
+                completion(true, movie.detail, nil)
             } else {
-                completion(false, nil)
+                completion(false, nil, "You are not connected to internet. Please try again later")
             }
             return
         }
@@ -33,19 +33,19 @@ class MovieDetailVM: NSObject {
                     do {
                         let movieData = try JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
                         let movieDetail = try JSONDecoder().decode(MovieDetail.self, from: movieData)
-                        completion(true, movieDetail)
+                        completion(true, movieDetail, nil)
                         self.writeToCache(movieDetail, id: id)
                     } catch {
                         print("Parsing error - \(error)")
-                        completion(false, nil)
+                        completion(false, nil, nil)
                     }
                 } else {
-                    completion(false, nil)
+                    completion(false, nil, nil)
                     print("failed to fetch data in proper format")
                 }
             case .failure(let error):
                 print("API error - \(error)")
-                completion(false, nil)
+                completion(false, nil, nil)
             }
         })
     }

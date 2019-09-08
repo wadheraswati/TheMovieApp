@@ -14,14 +14,15 @@ class MovieListVM: NSObject {
     let apiService = APIService.shared()
     let cacher: Cacher = Cacher(destination: .temporary)
 
-    func getPopularMovies(page : Int, completion : @escaping (_ success : Bool, _ movieList : [Movie]?, _ currentPage : Int?, _ totalPages : Int?) -> ()) {
+    func getPopularMovies(page : Int, completion : @escaping (_ success : Bool, _ movieList : [Movie]?, _ currentPage : Int?, _ totalPages : Int?, _ errorMsg : String?) -> ()) {
         
         let url = String(format: APIList.getPopularMovies, page)
-        if apiService.reachability.connection == .none {
+        
+        if !Connectivity.isConnectedToInternet {
             if let list : CachableMovie = cacher.load(fileName: "movies") {
-                completion(true, list.movies, 1, 1)
+                completion(true, list.movies, 1, 1, nil)
             } else {
-                completion(false, nil, nil, nil)
+                completion(false, nil, nil, nil, "You are not connected to internet. Please try again later")
             }
             return
         }
@@ -40,17 +41,17 @@ class MovieListVM: NSObject {
                         if page == 1 {
                             self.writeToCache(movieList)
                         }
-                        completion(true, movieList, page, totalNumberOfPages)
+                        completion(true, movieList, page, totalNumberOfPages, nil)
                     } catch {
-                        completion(false, nil, nil, nil)
+                        completion(false, nil, nil, nil, nil)
                         print("parsing error - \(error.localizedDescription)")
                     }
                 } else {
-                    completion(false, nil, nil, nil)
+                    completion(false, nil, nil, nil, nil)
                     print("failed to fetch data in proper format")
                 }
             case .failure(let error):
-                completion(false, nil, nil, nil)
+                completion(false, nil, nil, nil, nil)
                 print("API error - \(error)")
             }
         })
